@@ -34,16 +34,16 @@ public class CurrencyService {
 
     public CurrencyDto create(CurrencyDto dto) {
         log.info("CurrencyService method create executed");
-        return  mapper.convertToDto(repository.save(mapper.convertToEntity(dto)));
+        return mapper.convertToDto(repository.save(mapper.convertToEntity(dto)));
     }
 
-    public ListClientFormDto listCurrency(){
+    public ListClientFormDto listCurrency() {
 
         List<Currency> list = repository.findAll();
         List<ClientFormDto> formDto = new ArrayList<>();
 
-        for(Currency currency: list){
-            ClientFormDto clientFormDto =new ClientFormDto();
+        for (Currency currency : list) {
+            ClientFormDto clientFormDto = new ClientFormDto();
             clientFormDto.setName(currency.getName());
             clientFormDto.setValue(currency.getValue());
             formDto.add(clientFormDto);

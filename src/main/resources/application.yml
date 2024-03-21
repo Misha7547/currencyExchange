@@ -21,3 +21,6 @@ spring:
         hbm2ddl:
           auto: none
 
+cbr:
+  api:
+    getXml: https://cbr.ru/scripts/XML_daily.asp

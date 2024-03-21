@@ -29,7 +29,7 @@ public class CurrencyController {
     }
 
     @GetMapping
-    ResponseEntity<ListClientFormDto> listCurrency(){
+    ResponseEntity<ListClientFormDto> listCurrency() {
         return ResponseEntity.ok(service.listCurrency());
     }
 }
