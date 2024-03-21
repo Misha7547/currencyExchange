@@ -1,5 +1,37 @@
 # Сервис Обмен валюты
 
+Приложение "Обмен Валюты" 
+
+### Запросы API
+
+Создание новой записи о валюте:
+
+    curl --request POST \
+    --url http://localhost:8080/api/currency/create \
+    --header 'Content-Type: application/json' \
+    --data '{
+    "name": "Доллар Готэм-Сити",
+    "nominal": 3,
+    "value": 32.2,
+    "isoNumCode": 1337
+    }'
+
+Получение Валюты по id:
+
+    curl --request GET \
+      --url http://localhost:8080/api/currency/1333
+
+Конвертация валюты по числовому коду
+
+    curl --request GET \
+    --url http://localhost:8080/api/currency/convert?value=100&numCode=840
+
+Получение всеx хранящиеся в базе данных валюты и их стоимость:
+
+    curl --request GET \
+      --url http://localhost:8080/api/currency/
+
+
 ## Описание
 
 ## Стек используемых технологий
